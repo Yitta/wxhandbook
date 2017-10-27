@@ -187,7 +187,7 @@ Page({
     })
   },
   formReset: function (e) {
-    console.log('form发生了reset事件，携带数据为：', e.detail.value)
+    console.log('form发生了reset事件，携带数据为：', e.detail.totalPrice)
     // this.setData({
     //   hasLocation: false
     // })

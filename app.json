@@ -10,7 +10,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "随手记账本",
+    "navigationBarTitleText": "PUJI Calculator",
     "navigationBarTextStyle":"black"
   },
   

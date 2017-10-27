@@ -1,1 +1,9 @@
 @import "../../common/lib/weui.wxss";
+
+.marginRight{
+  margin-right: 10px
+}
+
+.floatRight{
+  float: right
+}
