@@ -9,7 +9,7 @@
 	"compileType": "weapp",
 	"libVersion": "1.6.0",
 	"appid": "touristappid",
-	"projectname": "puji",
+	"projectname": "calc",
 	"condition": {
 		"weapp": {
 			"current": -1,

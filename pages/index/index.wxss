@@ -33,3 +33,8 @@
  left: 0px;
  z-index:999;
 }
+
+.button-width{
+  width:100px;
+  text-align: center;
+}

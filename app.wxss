@@ -50,6 +50,7 @@ textarea {
   justify-content: space-between;
   font-size: 32rpx;
   font-family: Helvetica Neue,Hiragino Sans GB,Microsoft YaHei,\9ED1\4F53,Arial,sans-serif;
+  background-color: black
 }
 .page-head{
   padding: 60rpx 50rpx 80rpx;
@@ -114,7 +115,7 @@ textarea {
 .page-foot{
   margin: 100rpx 0 30rpx 0;
   text-align: center;
-  color: black;
+  color: grey;
   font-size: 2;
   position: relative;
   width: 100%;
@@ -227,7 +228,7 @@ textarea {
   right: 23%;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: 20%;
   box-shadow: 2px 2px 10px #AAA;
   z-index: 100;
   opacity:0.6;
@@ -235,11 +236,11 @@ textarea {
 
 .float-action2 {
   position: fixed;
-  bottom: 30%;
-  right: 23%;
+  bottom: 35%;
+  right: 43%;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: 20%;
   box-shadow: 2px 2px 10px #AAA;
   z-index: 100;
   opacity:0.6;

@@ -15,58 +15,56 @@ Page({
     typeindex: 0,
     mainindex: 0,
     subindex: 0,
-    subtitle: '',
-    comment: '',
-    cost: '',
-    date: '2016-09-01',
-    time: '12:01',
-    hasLocation: false,
-    location: {},
+    totoalPrice: '',
+    stamptax: '',
+    rentIncome: '',
+    propertyFee: '',
+    growthRate: '',
     inidata: {}
   },
 
   onLoad: function (params) {
     // 生命周期函数--监听页面加载
-    list = wx.getStorageSync('cashflow') || []
-    var typelist = wx.getStorageSync('typelist') || []
-    var typearray = []
-    if (typelist.length == 0) {
-      typearray = app.globalData.typearray
-    } else {
-      for (var i = 0; i < typelist.length; i++) {
-        typearray.push(typelist[i].name)
-      }
-    }
-    if (params.act === 'new') {
-      var curdate = curDate(new Date())
-      this.setData({
-        act: 'new',
-        isfocus: true,
-        mainindex: params.mainindex,
-        typearray: typearray,
-        date: curdate[0],
-        time: curdate[1]
-      })
-    } else {
-      var billinfo = list[params.mainindex].items[params.subindex]
-      this.setData({
-        act: 'edit',
-        isfocus: false,
-        mainindex: params.mainindex,
-        subindex: params.subindex,
-        numberindex: billinfo.member - 1,
-        typeindex: billinfo.typeindex || 0,
-        typearray: typearray,
-        subtitle: billinfo.subtitle,
-        comment: billinfo.comment,
-        cost: billinfo.cost,
-        date: billinfo.date,
-        time: billinfo.time,
-        hasLocation: billinfo.hasLocation || false,
-        location: billinfo.location,
-        inidata: billinfo
-      })
-    }
+    // list = wx.getStorageSync('cashflow') || []
+    // var typelist = wx.getStorageSync('typelist') || []
+    // var typearray = []
+    // if (typelist.length == 0) {
+    //   typearray = app.globalData.typearray
+    // } else {
+    //   for (var i = 0; i < typelist.length; i++) {
+    //     typearray.push(typelist[i].name)
+    //   }
+    // }
+    // if (params.act === 'new') {
+    //   var curdate = curDate(new Date())
+    //   this.setData({
+    //     act: 'new',
+    //     isfocus: true,
+    //     mainindex: params.mainindex,
+    //     typearray: typearray,
+    //     date: curdate[0],
+    //     time: curdate[1]
+    //   })
+    // } else {
+    //   var billinfo = list[params.mainindex].items[params.subindex]
+    //   this.setData({
+    //     act: 'edit',
+    //     isfocus: false,
+    //     mainindex: params.mainindex,
+    //     subindex: params.subindex,
+    //     numberindex: billinfo.member - 1,
+    //     typeindex: billinfo.typeindex || 0,
+    //     typearray: typearray,
+    //     subtitle: billinfo.subtitle,
+    //     comment: billinfo.comment,
+    //     cost: billinfo.cost,
+    //     date: billinfo.date,
+    //     time: billinfo.time,
+    //     hasLocation: billinfo.hasLocation || false,
+    //     location: billinfo.location,
+    //     inidata: billinfo
+    //   })
+    // }
   },
   onReady: function () {
     // 生命周期函数--监听页面初次渲染完成
@@ -187,7 +185,7 @@ Page({
     })
   },
   formReset: function (e) {
-    console.log('form发生了reset事件，携带数据为：', e.detail.totalPrice)
+    console.log('form发生了reset事件，携带数据为：', e.data)
     // this.setData({
     //   hasLocation: false
     // })

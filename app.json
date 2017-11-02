@@ -1,17 +1,13 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/settings/settings",
-    "pages/handbook/index/index",
-    "pages/handbook/detail/detail",
-    "pages/handbook/statistics/statistics",
-    "pages/handbook/sublist/sublist"
+    "pages/handbook/detail/detail"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "PUJI Calculator",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
   },
   
   "networkTimeout": {
