@@ -7,14 +7,7 @@ var list = []
 
 Page({
   data: {
-    act: 'new',
-    isfocus: true,
-    numberarray: app.globalData.numberarray,
-    numberindex: 0,
-    typearray: app.globalData.typearray,
-    typeindex: 0,
-    mainindex: 0,
-    subindex: 0,
+    isfocus: false,
     totoalPrice: '',
     stamptax: '',
     rentIncome: '',
@@ -22,49 +15,14 @@ Page({
     growthRate: '',
     inidata: {}
   },
-
+  handleInput(e) {
+    let obj = {};
+    obj[e.target.dataset.key] = e.detail.value;
+    this.setData(obj); //频繁的使用setData() 会有问题，建议分情况使用
+    console.log(obj);
+  },
   onLoad: function (params) {
-    // 生命周期函数--监听页面加载
-    // list = wx.getStorageSync('cashflow') || []
-    // var typelist = wx.getStorageSync('typelist') || []
-    // var typearray = []
-    // if (typelist.length == 0) {
-    //   typearray = app.globalData.typearray
-    // } else {
-    //   for (var i = 0; i < typelist.length; i++) {
-    //     typearray.push(typelist[i].name)
-    //   }
-    // }
-    // if (params.act === 'new') {
-    //   var curdate = curDate(new Date())
-    //   this.setData({
-    //     act: 'new',
-    //     isfocus: true,
-    //     mainindex: params.mainindex,
-    //     typearray: typearray,
-    //     date: curdate[0],
-    //     time: curdate[1]
-    //   })
-    // } else {
-    //   var billinfo = list[params.mainindex].items[params.subindex]
-    //   this.setData({
-    //     act: 'edit',
-    //     isfocus: false,
-    //     mainindex: params.mainindex,
-    //     subindex: params.subindex,
-    //     numberindex: billinfo.member - 1,
-    //     typeindex: billinfo.typeindex || 0,
-    //     typearray: typearray,
-    //     subtitle: billinfo.subtitle,
-    //     comment: billinfo.comment,
-    //     cost: billinfo.cost,
-    //     date: billinfo.date,
-    //     time: billinfo.time,
-    //     hasLocation: billinfo.hasLocation || false,
-    //     location: billinfo.location,
-    //     inidata: billinfo
-    //   })
-    // }
+    
   },
   onReady: function () {
     // 生命周期函数--监听页面初次渲染完成
@@ -93,87 +51,15 @@ Page({
   //     path: 'path' // 分享路径
   //   }
   // },
-
-  chooseLocation: function () {
-    var that = this
-    wx.chooseLocation({
-      success: function (res) {
-        console.log(res)
-        that.setData({
-          hasLocation: true,
-          location: res,
-          // locationAddress: res.address
-        })
-      }
-    })
-  },
-  bindNumberChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      numberindex: e.detail.value
-    })
-  },
-  bindTypeArrayChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      typeindex: e.detail.value
-    })
-  },
-  bindDateChange: function (e) {
-    this.setData({
-      date: e.detail.value
-    })
-  },
-  bindTimeChange: function (e) {
-    this.setData({
-      time: e.detail.value
-    })
-  },
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    if (this.data.act === 'new') {
-      list[this.data.mainindex].items.push(
-        {
-          subtitle: e.detail.value.title,
-          comment: e.detail.value.detail,
-          cost: parseFloat(e.detail.value.cost || '0'),
-          date: e.detail.value.date,
-          time: e.detail.value.time,
-          member: parseInt(e.detail.value.member) + 1,
-          typeindex: parseInt(e.detail.value.typeindex),
-          hasLocation: this.data.hasLocation,
-          location: this.data.location
-        }
-      )
-    } else {
-      list[this.data.mainindex].items[this.data.subindex] = {
-        subtitle: e.detail.value.title,
-        comment: e.detail.value.detail,
-        cost: parseFloat(e.detail.value.cost),
-        date: e.detail.value.date,
-        time: e.detail.value.time,
-        member: parseInt(e.detail.value.member) + 1,
-        typeindex: parseInt(e.detail.value.typeindex),
-        hasLocation: this.data.hasLocation,
-        location: this.data.location
-      }
-    }
-    list[this.data.mainindex].items.sort(function (a, b) {
-      var d1 = new Date(a.date.replace(/-/g, '/') + ' ' + a.time)
-      var d2 = new Date(b.date.replace(/-/g, '/') + ' ' + b.time)
-      return d1 - d2
-    })
-    wx.setStorageSync('cashflow', list)
-    wx.showToast({
-      title: '成功',
-      icon: 'success',
-      duration: 2000
-    })
-    wx.navigateBack({
-      delta: 1, // 回退前 delta(默认为1) 页面
+    var result = Number(e.detail.value.totoalPrice) + Number(e.detail.value.stamptax) + Number(e.detail.value.rentIncome) + Number(e.detail.value.propertyFee) + Number(e.detail.value.growthRate)
+    console.log(result);
+    wx.navigateTo({
+      url: '/pages/index/index', // 回退前 delta(默认为1) 页面
       success: function (res) {
         // success
-        console.log('goback succ')
+        console.log('goback success')
       },
       fail: function () {
         // fail
@@ -186,9 +72,6 @@ Page({
   },
   formReset: function (e) {
     console.log('form发生了reset事件，携带数据为：', e.data)
-    // this.setData({
-    //   hasLocation: false
-    // })
     if (this.data.act === 'new') {
       var curdate = curDate(new Date())
       this.setData({

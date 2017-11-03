@@ -8,7 +8,7 @@
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
             <view class="marginRight">房屋总价 </view>
-            <input name="title" type='digit' class="weui-input" focus='{{isfocus}}' placeholder="输入相关金额" value='{{totoalPrice}}' />
+            <input name="totoalPrice" type='digit' class="weui-input" focus='{{isfocus}}' placeholder="输入相关金额" value='{{totoalPrice}}' data-key="totoalPrice" bindchange="handleInput"/>
             <view class='floatRight'>AUD</view>
           </view>
         </view>
@@ -16,7 +16,7 @@
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
             <view class="marginRight">印花税</view>
-            <input type='digit' name="title" class="weui-input" focus='{{isfocus}}' placeholder="输入印花税" value='{{stamptax}}' />
+            <input type='digit' name="stamptax" class="weui-input" focus='{{isfocus}}' placeholder="输入印花税" value='{{stamptax}}' data-key="stamptax" bindchange="handleInput"/>
             <view class='floatRight'>AUD</view>
           </view>
         </view>
@@ -24,7 +24,7 @@
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
             <view class="marginRight">预计租金收入 </view>
-            <input type='digit' name="title" class="weui-input" focus='{{isfocus}}' placeholder="输入每周租金" value='{{rentIncome}}' />
+            <input type='digit' name="rentIncome" class="weui-input" focus='{{isfocus}}' placeholder="输入每周租金" value='{{rentIncome}}' data-key="rentIncome" bindchange="handleInput"/>
             <view class='floatRight'>AUD</view>
           </view>
         </view>
@@ -32,7 +32,7 @@
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
             <view class="marginRight">预计物业费 </view>
-            <input type='digit' name="title" class="weui-input" focus='{{isfocus}}' placeholder="输入每季度物业费" value='{{propertyFee}}' />
+            <input type='digit' name="propertyFee" class="weui-input" focus='{{isfocus}}' placeholder="输入每季度物业费" value='{{propertyFee}}' data-key="propertyFee" bindchange="handleInput"/>
             <view class='floatRight'>AUD</view>
           </view>
         </view>
@@ -40,29 +40,10 @@
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
             <view class="marginRight">预计房价涨幅</view>
-            <input type='digit' name="title" class="weui-input" focus='{{isfocus}}' placeholder="输入每年房价涨幅" value='{{growthRate}}' />
+            <input type='digit' name="growthRate" class="weui-input" focus='{{isfocus}}' placeholder="输入每年房价涨幅" value='{{growthRate}}' data-key="growthRate" bindchange="handleInput"/>
             <view class='floatRight'>%</view>
           </view>
         </view>
-
-        <!-- <view class="weui-cells__title">输入相关金额</view>
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-label">当前选择</view>
-            <view class="weui-cell__bd">
-              <picker name="typeindex" value="{{typeindex}}" range="{{typearray}}" bindchange="bindTypeArrayChange">
-                <view class="weui-input" name="member">{{typearray[typeindex]}}</view>
-              </picker>
-            </view>
-          </view>
-        </view> -->
-
-        <!-- <view class="weui-cells__title">花费费用（元）</view>
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <input name="cost" class="weui-input" type="digit" placeholder="" value='{{cost}}' />
-          </view>
-        </view> -->
         
         <view class="btn-area">
           <button class="weui-btn" type="primary" formType="submit">提交</button>

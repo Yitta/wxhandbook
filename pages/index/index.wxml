@@ -7,24 +7,13 @@
   </view>
 
   <view class="page-body">
-    <view class="index-bd">
-      <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{list}}" wx:key="id">
-        <view class="content">
-          <navigator url="../handbook/index/index?index={{index}}" class="navigator">
-            <view class="navigator-text">{{item.title}}</view>
-            <view class="navigator-arrow"></view>
-          </navigator>
-        </view>
-      </view>
-    </view>
-    <!-- <view bindtap="showModal1">
-      <image class="float-action2" src="../common/icon/add.png"></image>
-    </view> -->
+    
     <view>
       <navigator url="../handbook/detail/detail" hover-class="navigator-hover">
         <image class="float-action2" src="../common/icon/calculator.svg"></image>
       </navigator>
     </view>
   </view>
+  
   <template is="foot" />
 </view>
