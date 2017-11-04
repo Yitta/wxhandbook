@@ -56,7 +56,7 @@ Page({
     var result = Number(e.detail.value.totoalPrice) + Number(e.detail.value.stamptax) + Number(e.detail.value.rentIncome) + Number(e.detail.value.propertyFee) + Number(e.detail.value.growthRate)
     console.log(result);
     wx.navigateTo({
-      url: '/pages/handbook/result/result', // 回退前 delta(默认为1) 页面
+      url: '/pages/index/index', // 回退前 delta(默认为1) 页面
       success: function (res) {
         // success
         console.log('goback success')

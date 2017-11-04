@@ -1,0 +1,24 @@
+<import src="../../common/foot.wxml" />
+<view class="container">
+  <view>
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="../../common/icon/logo.jpg" background-size="cover"></image>
+    </view>
+    <view class="weui-msg__text-area margin">
+      <view class="weui-msg__title fontColor">预计收益</view>
+      <view class="weui-msg__desc fontColor">$110,000
+      </view>
+    </view>
+    <view class="weui-msg__opr-area">
+      <view class="weui-btn-area">
+        <navigator url="/pages/handbook/detail/detail" hover-class="navigator-hover">
+          <button class="weui-btn color">再算一次</button>
+        </navigator>
+        <navigator url="/pages/index/index" hover-class="navigator-hover">
+          <button class="weui-btn" type="default">返回主页</button>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

@@ -1,0 +1,40 @@
+@import "../../common/lib/weui.wxss";
+
+.marginRight{
+  margin-right: 10px
+}
+
+.floatRight{
+  float: right
+}
+
+.logo{
+  width: 300px;
+  height: auto;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 600rpx;
+  height: 200rpx;
+  margin: 20rpx;
+}
+
+.color {
+  background-color: #e1bd77;
+}
+
+.fontColor{
+  color:#e1bd77;
+  font-weight: bold;
+  text-align: center;
+}
+
+.margin{
+  margin: 10% auto;
+}

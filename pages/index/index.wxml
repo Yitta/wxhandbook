@@ -8,9 +8,9 @@
 
   <view class="page-body">
     
-    <view>
+    <view class="weui-btn-area">
       <navigator url="../handbook/detail/detail" hover-class="navigator-hover">
-        <image class="float-action2" src="../common/icon/calculator.svg"></image>
+        <button class="weui-btn color">开始计算</button>
       </navigator>
     </view>
   </view>

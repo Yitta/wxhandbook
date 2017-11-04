@@ -1,7 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/handbook/detail/detail"
+    "pages/handbook/detail/detail",
+    "pages/handbook/result/result"
   ],
   "window":{
     "backgroundTextStyle":"light",
